@@ -93,8 +93,6 @@ fn build_lib_and_link() {
         .map(|file| format!("{}/{}", src_dir, file.trim()))
         .collect::<Vec<String>>();
 
-    includes_dir.iter().for_each(|p| println!("cargo:include={}", p));
-
     if cfg!(feature = "with_osi_system") || cfg!(feature = "with_osi_static") {
         lib_sources.push(format!("{}/OsiClp/OsiClpSolverInterface.cpp", src_dir));
         includes_dir.push(format!("{}/OsiClp", src_dir));
@@ -105,6 +103,8 @@ fn build_lib_and_link() {
         }
     }
 
+    includes_dir.iter().for_each(|p| println!("cargo:include={}", p));
+    
     if let Some(paths) = env::var_os("DEP_COINUTILS_INCLUDE") {
         env::split_paths(&paths).for_each(|p| {
             includes_dir.push(format!("{}", p.display()));
