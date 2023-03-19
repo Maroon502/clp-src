@@ -93,7 +93,7 @@ fn build_lib_and_link() {
         .map(|file| format!("{}/{}", src_dir, file.trim()))
         .collect::<Vec<String>>();
 
-    if cfg!(feature = "with_osi_system") || cfg!(feature = "with_osi_static") {
+    if cfg!(feature = "with_osi") {
         lib_sources.push(format!("{}/OsiClp/OsiClpSolverInterface.cpp", src_dir));
         includes_dir.push(format!("{}/OsiClp", src_dir));
         if let Some(paths) = env::var_os("DEP_OSI_INCLUDE") {

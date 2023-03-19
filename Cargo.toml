@@ -21,12 +21,14 @@ exclude = [
 ]
 
 [features]
-default = []
+default = ["with_osi"]
+
 system = ["coinutils-src/system"]
 static = ["coinutils-src/static"]
 
-with_osi_system = ["osi-src/system"]
-with_osi_static = ["osi-src/static"]
+with_osi = ["osi-src"]
+with_osi_system = ["osi-src/system", "with_osi"]
+with_osi_static = ["osi-src/static", "with_osi"]
 
 
 [dependencies]
