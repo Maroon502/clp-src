@@ -1,0 +1,4 @@
+[submodule "Clp"]
+	path = Clp
+	url = https://github.com/coin-or/Clp.git
+	branch = releases/1.17.7

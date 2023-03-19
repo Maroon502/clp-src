@@ -1,0 +1,39 @@
+[package]
+name = "clp-src"
+version = "0.1.0+0.108.7"
+edition = "2021"
+build = "build.rs"
+links = "Clp"
+license = "Apache-2.0"
+license-file = "LICENSE.md"
+description = "Build Clp as a crate."
+repclptory = "https://github.com/Maroon502/clp-src"
+keywords = ["coin-or", "Clp", "Clp-src"]
+readme = "README.md"
+authors = [
+    "Maroon"
+]
+exclude = [
+    "Clp/**/*",
+    "!Clp/Clp/src/**/*",
+    "!**/LICENSE",
+    "!**/AUTHORS",
+]
+
+[features]
+default = []
+system = ["coinutils-src/system"]
+static = ["coinutils-src/static"]
+
+with_osi_system = ["osi-src/system"]
+with_osi_static = ["osi-src/static"]
+
+
+[dependencies]
+coinutils-src = {git = "https://github.com/Maroon502/coinutils-src.git"}
+osi-src = {git = "https://github.com/Maroon502/osi-src.git", optional = true}
+
+[build-dependencies]
+cc = "1.0"
+vcpkg = "0.2"
+pkg-config = "0.3"
