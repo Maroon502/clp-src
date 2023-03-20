@@ -2,7 +2,9 @@
 
 [![Package][package-img]][package-url] [![Documentation][documentation-img]][documentation-url] [![License][license-img]][license-url]
 
-The package provides a source of [Clp].
+The package provides Low-level bindings to the [Clp] library. [Clp] build with [CoinUtils] ([CoinUtils-src]), [Osi] ([Clp-src])(Optional) support.
+
+Clp (Coin-or linear programming) is an open-source linear programming solver. It is primarily meant to be used as a callable library, but a basic, stand-alone executable version is also available.
 
 ## Usage
 Just add the following to your `Cargo.toml`:
@@ -16,15 +18,27 @@ clp-src = "0.1"
 
 The following Cargo features are supported:
 
-* `static` to link to Clp statically, and
-* `system` to skip building the bundled Clp.
+* `default` to `with_osi` feature;
+* `with_osi` to build with Osi support;
+
+The package build from the source and link statically by default. It also provide the following environment variables to allow users to link to system library customly:
+
+* `CARGO_COINUTILS_STATIC` to link to CoinUtils statically;
+* `CARGO_COINUTILS_SYSTEM` to link to CoinUtils system library;
+* `CARGO_OSI_STATIC` to link to Osi statically if `with_osi` feature is enabled;
+* `CARGO_OSI_SYSTEM` to link to Osi system library if `with_osi` feature is enabled;
+* `CARGO_CLP_STATIC` to link to Clp statically;
+* `CARGO_CLP_SYSTEM` to link to Clp system library;
+
+Set the environment variable to `1` to enable the feature. For example, to link to system library dynamically, set `CARGO_${LIB_NAME}_SYSTEM` to `1`; to link to system library statically, set both `CARGO_${LIB_NAME}_SYSTEM` and `CARGO_${LIB_NAME}_STATIC` to `1`.
 
 ## Windows and vcpkg
 
-On Windows, `clp-src` relies on [vcpkg] to find Clp. Before building,
-you must have the correct Clp installed for your target triplet and kind of
-linking. For instance, to link dynamically for the `x86_64-pc-windows-msvc`
-toolchain, install `clp` for the `x64-windows` triplet:
+On Windows, if `${LIB_NAME}_SYSTEM` is set to `1`, `clp-src` will use 
+[vcpkg] to find Clp. Before building, you must have the correct Clp 
+installed for your target triplet and kind of linking. For instance,
+to link dynamically for the `x86_64-pc-windows-msvc` toolchain, install
+ `clp` for the `x64-windows` triplet:
 
 ```sh
 vcpkg install clp --triplet x64-windows
@@ -75,7 +89,13 @@ Your contribution is highly appreciated. Do not hesitate to open an issue or a
 pull request. Note that any contribution submitted for inclusion in the project
 will be licensed according to the terms given in [LICENSE](license-url).
 
+[CoinUtils]: https://github.com/coin-or/CoinUtils
+[Osi]: https://github.com/coin-or/Osi
 [Clp]: https://github.com/coin-or/Clp
+
+[CoinUtils-src]: https://github.com/Maroon502/coinutils-src
+[Osi-src]: https://github.com/Maroon502/osi-src
+
 [vcpkg]: https://github.com/Microsoft/vcpkg
 
 [documentation-img]: https://docs.rs/clp-src/badge.svg
