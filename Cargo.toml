@@ -5,13 +5,12 @@ edition = "2021"
 build = "build.rs"
 links = "Clp"
 license = "Apache-2.0"
-license-file = "LICENSE.md"
-description = "Build Clp as a crate."
-repository = "https://github.com/Maroon502/clp-src"
+description = "The low-level bindings to the COIN-OR Clp library."
+repository = "https://github.com/Maroon502/clp-src.git"
 keywords = ["coin-or", "Clp", "Clp-src"]
 readme = "README.md"
 authors = [
-    "Maroon"
+    "Maroon502<maroon502@outlook.com>"
 ]
 exclude = [
     "Clp/**/*",
@@ -23,13 +22,7 @@ exclude = [
 [features]
 default = ["with_osi"]
 
-system = ["coinutils-src/system"]
-static = ["coinutils-src/static"]
-
 with_osi = ["osi-src"]
-with_osi_system = ["osi-src/system", "with_osi"]
-with_osi_static = ["osi-src/static", "with_osi"]
-
 
 [dependencies]
 coinutils-src = {git = "https://github.com/Maroon502/coinutils-src.git"}
@@ -37,5 +30,4 @@ osi-src = {git = "https://github.com/Maroon502/osi-src.git", optional = true}
 
 [build-dependencies]
 cc = "1.0"
-vcpkg = "0.2"
-pkg-config = "0.3"
+coin-build-tools = { git = "https://github.com/Maroon502/coin-build-tools.git" }
