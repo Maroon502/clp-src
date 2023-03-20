@@ -1,0 +1,6 @@
+ClpSolver.cpp
+CbcOrClpParam.cpp
+Clp_ampl.cpp
+MyEventHandler.cpp
+MyMessageHandler.cpp
+unitTest.cpp

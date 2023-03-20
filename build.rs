@@ -60,6 +60,16 @@ fn build_lib_and_link() {
         coinflags.extend(coinflags_other);
     }
 
+    if cfg!(feature = "clpsolver") {
+        let lib_sources_cbcsolver = include_str!("clpsolver_lib_sources.txt")
+        .trim()
+        .split('\n')
+        .map(|file| format!("{}/{}", src_dir, file.trim()))
+        .collect::<Vec<String>>();
+
+        lib_sources.extend(lib_sources_cbcsolver);
+    }
+
     coinflags.iter().for_each(|flag| {
         config.define(&format!("COIN_HAS_{}", flag), None);
     });

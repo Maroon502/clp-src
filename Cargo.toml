@@ -20,8 +20,8 @@ exclude = [
 ]
 
 [features]
-default = ["with_osi"]
-
+default = ["with_osi", "clpsolver"]
+clpsolver = []
 with_osi = ["osi-src"]
 
 [dependencies]
