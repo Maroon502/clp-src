@@ -18,8 +18,9 @@ clp-src = "0.1"
 
 The following Cargo features are supported:
 
-* `default` to `with_osi` feature;
-* `with_osi` to build with Osi support;
+* `default` to `osiclp` and `clpsolver` feature;
+* `osiclp` to build with Osi supported;
+* `clpsolver` to build `ClpSolver` lib and crate the api for `Rust`. If you do not use `Clp` directly, you can disable this feature to reduce the build time;
 
 The package build from the source and link statically by default. It also provide the following environment variables to allow users to link to system library customly:
 
