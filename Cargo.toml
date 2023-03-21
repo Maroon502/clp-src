@@ -1,10 +1,11 @@
 [package]
 name = "clp-src"
-version = "0.1.0+1.17.7"
+version = "0.2.0+1.17.7"
 edition = "2021"
 build = "build.rs"
 links = "Clp"
 license = "Apache-2.0"
+documentation = "https://docs.rs/clp-src/"
 description = "The low-level bindings to the COIN-OR Clp library."
 repository = "https://github.com/Maroon502/clp-src.git"
 keywords = ["coin-or", "Clp", "Clp-src"]
@@ -25,10 +26,10 @@ clpsolver = []
 osiclp = ["osi-src"]
 
 [dependencies]
-coinutils-src = {git = "https://github.com/Maroon502/coinutils-src.git"}
-osi-src = {git = "https://github.com/Maroon502/osi-src.git", optional = true}
+coinutils-src = "0.2"
+osi-src = { version = "0.2", optional = true}
 
 [build-dependencies]
 cc = "1.0"
-coin-build-tools = { git = "https://github.com/Maroon502/coin-build-tools.git" }
+coin-build-tools = "0.2"
 bindgen = "0.64"
