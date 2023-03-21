@@ -20,9 +20,9 @@ exclude = [
 ]
 
 [features]
-default = ["with_osi", "clpsolver"]
+default = ["osiclp", "clpsolver"]
 clpsolver = []
-with_osi = ["osi-src"]
+osiclp = ["osi-src"]
 
 [dependencies]
 coinutils-src = {git = "https://github.com/Maroon502/coinutils-src.git"}
@@ -31,3 +31,4 @@ osi-src = {git = "https://github.com/Maroon502/osi-src.git", optional = true}
 [build-dependencies]
 cc = "1.0"
 coin-build-tools = { git = "https://github.com/Maroon502/coin-build-tools.git" }
+bindgen = "0.64"
