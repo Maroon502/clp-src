@@ -1,8 +1,7 @@
 #![doc = include_str!("../README.md")]
 
-#![allow(non_upper_case_globals)]
-#![allow(non_camel_case_types)]
-#![allow(non_snake_case)]
+#![no_std]
 
-#[cfg(feature = "clpsolver")]
-include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
+extern crate coinutils_src;
+#[cfg(feature = "osiclp")]
+extern crate osi_src;
