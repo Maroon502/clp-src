@@ -6,7 +6,7 @@ build = "build.rs"
 links = "Clp"
 license = "Apache-2.0"
 documentation = "https://docs.rs/clp-src/"
-description = "The low-level bindings to the COIN-OR Clp library."
+description = "Redistribution of Coin-OR Clp as a crate"
 repository = "https://github.com/Maroon502/clp-src.git"
 keywords = ["coin-or", "Clp", "Clp-src"]
 readme = "README.md"
@@ -21,7 +21,7 @@ exclude = [
 ]
 
 [features]
-default = ["osiclp", "clpsolver"]
+default = ["osiclp"]
 clpsolver = []
 osiclp = ["osi-src"]
 
@@ -32,4 +32,3 @@ osi-src = { version = "0.2", optional = true}
 [build-dependencies]
 cc = "1.0"
 coin-build-tools = "0.2"
-bindgen = "0.64"

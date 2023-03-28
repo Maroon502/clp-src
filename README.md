@@ -2,7 +2,9 @@
 
 [![Package][package-img]][package-url] [![Documentation][documentation-img]][documentation-url] [![License][license-img]][license-url]
 
-The package provides Low-level bindings to the [Clp] library. [Clp] build with [CoinUtils] ([CoinUtils-src]), [Osi] ([Clp-src])(Optional) support.
+Clp-src crate is a *-src crate. This links [Clp] libraries to executable build by cargo, but does not provide Rust bindings. [Clp] build with [CoinUtils] ([CoinUtils-src]), [Osi] ([Osi-src])(Optional) support.
+
+By this package, you don't need to worry about installing Clp in the system, and it's a package for **all platforms**.
 
 Clp (Coin-or linear programming) is an open-source linear programming solver. It is primarily meant to be used as a callable library, but a basic, stand-alone executable version is also available.
 
@@ -11,7 +13,7 @@ Just add the following to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-clp-src = "0.1"
+clp-src = "0.2"
 ```
 
 ## Configuration
