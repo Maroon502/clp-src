@@ -9,11 +9,18 @@ By this package, you don't need to worry about installing Clp in the system, and
 Clp (Coin-or linear programming) is an open-source linear programming solver. It is primarily meant to be used as a callable library, but a basic, stand-alone executable version is also available.
 
 ## Usage
-Just add the following to your `Cargo.toml`:
+
+1. add the following to your `Cargo.toml`:
 
 ```toml
 [dependencies]
 clp-src = "0.2"
+```
+
+2. add the following to your `lib.rs`:
+
+```toml
+extern crate clp_src;
 ```
 
 This package does not provide bindings. Please use [coincbc-sys], [coinclp-sys] to use Cbc, Clp, e.g.
