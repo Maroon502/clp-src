@@ -30,5 +30,5 @@ coinutils-src = "0.2"
 osi-src = { version = "0.2", optional = true}
 
 [build-dependencies]
-cc = "1.0"
+cc = { version = "1.0", features = ["parallel"] }
 coin-build-tools = "0.2"
