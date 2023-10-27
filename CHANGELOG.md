@@ -8,12 +8,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.2.6+1.17.9](https://github.com/Maroon502/clp-src/compare/v0.2.5+1.17.9...v0.2.6+1.17.9) - 2023-10-27
 
-### Other
-- Update CI
-- *(deps)* bump actions/checkout from 3 to 4
-- Update CI
-- *(deps)* change cc to parallel version
-- Update docs
+### Change
+- *cc* change cc to parallel version
+
+### Docs
+- Update README.md
 
 ## [0.2.5+1.17.9](https://github.com/Maroon502/clp-src/compare/v0.2.4+1.17.8...v0.2.5+1.17.9) - 2023-10-26
 
