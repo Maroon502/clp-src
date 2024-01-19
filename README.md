@@ -4,7 +4,7 @@
 
 Clp-src crate is a *-src crate. This links [Clp] libraries to executable build by cargo, but does not provide Rust bindings. [Clp] build with [CoinUtils] ([CoinUtils-src]), [Osi] ([Osi-src])(Optional) support.
 
-By this package, you don't need to worry about installing Clp in the system, and it's a package for **all platforms**.
+By this package, you don't need to worry about installing Clp in the system, and it's a package for **multi-platforms**.
 
 Clp (Coin-or linear programming) is an open-source linear programming solver. It is primarily meant to be used as a callable library, but a basic, stand-alone executable version is also available.
 
@@ -96,7 +96,7 @@ you can compile it for the other target by providing the `--target` option to
 | `armv7-unknown-linux-musleabi`       | ✓   |
 | `armv7-unknown-linux-musleabihf`     | ✓   |
 | `riscv64gc-unknown-linux-gnu`        | ✓   |
-| `x86_64-pc-windows-gnu`              | ✓   |
+| `x86_64-pc-windows-msvc`              | ✓   |
 | `x86_64-unknown-linux-gnu`           | ✓   |
 
 ## Contribution
