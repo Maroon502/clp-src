@@ -33,12 +33,18 @@ fn main() {
         if cfg!(feature = "osiclp") {
             println!("cargo:rustc-link-lib={}=OsiClp", link_type);
             coinflags.push("OSICLP".to_string());
+
+            let (_, coinflags_other) = coinbuilder::get_metadata_from("Osi");
+            coinflags.extend(coinflags_other);
         }
 
         if cfg!(feature = "clpsolver") {
             println!("cargo:rustc-link-lib={}=ClpSolver", link_type);
             coinflags.push("CLPSOLVER".to_string());
         }
+
+        let (_, coinflags_other) = coinbuilder::get_metadata_from("CoinUtils");
+        coinflags.extend(coinflags_other);
 
         coinbuilder::print_metadata(Vec::new(), coinflags);
         return;

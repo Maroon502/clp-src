@@ -2,7 +2,7 @@
 
 [![Package][package-img]][package-url] [![Documentation][documentation-img]][documentation-url] [![License][license-img]][license-url]
 
-Clp-src crate is a *-src crate. This links [Clp] libraries to executable build by cargo, but does not provide Rust bindings. [Clp] build with [CoinUtils] ([CoinUtils-src]), [Osi] ([Osi-src])(Optional) support.
+`Clp-src` crate is a *-src crate. This links [Clp] libraries to executable build by cargo, but does not provide Rust bindings. [Clp] is built with [CoinUtils] ([CoinUtils-src]), [Osi] ([Osi-src])(Optional).
 
 By this package, you don't need to worry about installing Clp in the system, and it's a package for **multi-platforms**.
 
@@ -12,30 +12,35 @@ Clp (Coin-or linear programming) is an open-source linear programming solver. It
 
 1. add the following to your `Cargo.toml`:
 
-```toml
-[dependencies]
-clp-src = "0.2"
-```
+    ```toml
+    [dependencies]
+    clp-src = "\*"
+    ```
 
 2. add the following to your `lib.rs`:
 
-```toml
-extern crate clp_src;
-```
+    ```toml
+    extern crate clp_src;
+    ```
 
 This package does not provide bindings. Please use [coincbc-sys], [coinclp-sys] to use Cbc, Clp, e.g.
 
 ```toml
 [dependencies]
-coincbc-sys = { version = "0.2" }
+coinclp-sys = { version = "\*" }
 ```
+
 ## Configuration
+
+### Features
 
 The following Cargo features are supported:
 
 * `default` to `osiclp` and `clpsolver` feature;
 * `osiclp` to build with Osi supported;
 * `clpsolver` to build `ClpSolver` lib and crate the api for `Rust`. If you do not use `Clp` directly, you can disable this feature to reduce the build time;
+
+### Environment
 
 The package build from the source and link statically by default. It also provide the following environment variables to allow users to link to system library customly:
 
@@ -50,8 +55,8 @@ Set the environment variable to `1` to enable the feature. For example, to link 
 
 ## Windows and vcpkg
 
-On Windows, if `${LIB_NAME}_SYSTEM` is set to `1`, `clp-src` will use 
-[vcpkg] to find Clp. Before building, you must have the correct Clp 
+On Windows, if `${LIB_NAME}_SYSTEM` is set to `1`, `clp-src` will use
+[vcpkg] to find Clp. Before building, you must have the correct Clp
 installed for your target triplet and kind of linking. For instance,
 to link dynamically for the `x86_64-pc-windows-msvc` toolchain, install
  `clp` for the `x64-windows` triplet:
@@ -74,7 +79,7 @@ vcpkg install clp --triplet x64-windows-static
 
 and build with `+crt-static` option
 
-```
+```sh
 RUSTFLAGS='-C target-feature=+crt-static' cargo build --target x86_64-pc-windows-msvc
 ```
 
@@ -82,22 +87,24 @@ Please see the ["Static and dynamic C runtimes" in The Rust reference](https://d
 
 ## Cross Compilation
 
-you can compile it for the other target by providing the `--target` option to 
-`cargo build`. 
-
+you can compile it for the other target by providing the `--target` option to
+`cargo build`.
 
 | Target                               |  supported  |
 |--------------------------------------|:-----------:|
 | `arm-unknown-linux-gnueabi`          | ✓   |
 | `arm-unknown-linux-gnueabihf`        | ✓   |
-| `armv7-linux-androideabi`            | ✓   |
 | `armv7-unknown-linux-gnueabi`        | ✓   |
 | `armv7-unknown-linux-gnueabihf`      | ✓   |
 | `armv7-unknown-linux-musleabi`       | ✓   |
 | `armv7-unknown-linux-musleabihf`     | ✓   |
+| `aarch64-unknown-linux-gnu`          | ✓   |
+| `aarch64-unknown-linux-musl`         | ✓   |
 | `riscv64gc-unknown-linux-gnu`        | ✓   |
-| `x86_64-pc-windows-msvc`              | ✓   |
+| `x86_64-pc-windows-msvc`             | ✓   |
 | `x86_64-unknown-linux-gnu`           | ✓   |
+| `x86_64-unknown-linux-musl`          | ✓   |
+| others                               | not test   |
 
 ## Contribution
 
