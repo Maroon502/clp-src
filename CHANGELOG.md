@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.8+1.17.10](https://github.com/Maroon502/clp-src/compare/v0.2.7+1.17.9...v0.2.8+1.17.10) - 2024-08-20
+
+### Other
+- Update Clp from 1.17.9 to 1.17.10
+
 ## [0.2.7+1.17.9](https://github.com/Maroon502/clp-src/compare/v0.2.6+1.17.9...v0.2.7+1.17.9) - 2024-04-11
 
 ### Fixed
