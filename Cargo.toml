@@ -1,6 +1,6 @@
 [package]
 name = "clp-src"
-version = "0.2.8+1.17.10"
+version = "0.2.9+1.17.10"
 edition = "2021"
 build = "build.rs"
 links = "Clp"

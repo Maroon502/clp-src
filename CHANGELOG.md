@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.9+1.17.10](https://github.com/Maroon502/clp-src/compare/v0.2.8+1.17.10...v0.2.9+1.17.10) - 2025-12-14
+
+### Other
+
+- *(deps)* bump actions/checkout from 4 to 5 ([#6](https://github.com/Maroon502/clp-src/pull/6))
+- Bump cc from 1.0 to 1.1
+
 ## [0.2.8+1.17.10](https://github.com/Maroon502/clp-src/compare/v0.2.7+1.17.9...v0.2.8+1.17.10) - 2024-08-20
 
 ### Other
