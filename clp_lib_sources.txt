@@ -4,7 +4,6 @@ ClpConstraint.cpp
 ClpConstraintLinear.cpp
 ClpConstraintQuadratic.cpp
 Clp_C_Interface.cpp
-Clp_C_Interface.h
 ClpDualRowDantzig.cpp
 ClpDualRowPivot.cpp
 ClpDualRowSteepest.cpp
